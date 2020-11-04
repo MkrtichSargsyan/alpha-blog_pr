@@ -21,11 +21,17 @@
       </li>
       <% if logged_in? %>
         <li class="nav-item">
+          <%= link_to current_user.username, current_user , class:'nav-link' %>
+        </li>
+        <li class="nav-item">
           <%= link_to 'Logout', logout_path,class:'nav-link', method: :delete %>
         </li>
       <% else %>
         <li class="nav-item">
           <%= link_to 'Log in', login_path,class:'nav-link' %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'Sign up', signup_path,class:'nav-link' %>
         </li>
       <% end %>
     </ul>
